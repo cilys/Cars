@@ -82,3 +82,20 @@ function postFile(url, roomNumber, formData, sus, err){
 		}
 	})
 }
+
+function getFormJsonData(formId){
+	var d = {}
+	var t = $("#" + formId).serializeArray();
+	
+	$.each(t, function(){
+		d[this.name] = this.value;
+	})
+	return d;
+}
+
+function getFormJsonStringData(formId){
+	var j = getFormJsonData(formId);
+	return JSON.stringify(j);
+}
+
+

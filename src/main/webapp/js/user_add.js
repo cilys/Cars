@@ -1,6 +1,21 @@
 $(document).ready(function(){
 	
-	$("#btn_add").on("click", function(){
+	layui.use('form', function() {
+		var form = layui.form;
+		form.on('submit(add)', function(data) {
+			alert(getFormJsonStringData("form_data"))
+			return false;
+		});
+	});
+	
+	$("#btn_add0").on("click", function(){
+		
+		var flag = true;
+		if(flag){
+			return false;
+		}
+		
+		
 		var userName = $("#input_user_name").val()
 		if(strIsEmpty(userName)){
 			showToast("请输入登录账号")

@@ -44,6 +44,11 @@ $(document).ready(function(){
 						
 						addStationToView(distance, res.data[i].name, distance)
 						
+						if(i > 0){
+							drawLine(res.data[i - 1].x, res.data[i - 1].y, 
+								res.data[i].x, res.data[i].y, "#FF0000");
+						}
+						
 						preStationX = res.data[i].x;
 						preStationY = res.data[i].y;
 					}

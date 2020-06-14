@@ -110,6 +110,7 @@ $(document).ready(function(){
 			return;
 		}
 		
+		
 		getShortLine(startStationId, endStationId, true);
 	})
 	
@@ -137,6 +138,11 @@ $(document).ready(function(){
 		var realName = $("#select_user").find("option:selected").text();
 		var taskDate = $("#input_task_date").val();
 		var taskStatus = 2;
+		
+		if(userId == null || userId == ''){
+			showToast("请指派司机");
+			return;
+		}
 		
 		addTask(userId, realName, startStationId, startStationName, endStationId, endStationName,
 			taskDate, taskStatus, totalDistance);
